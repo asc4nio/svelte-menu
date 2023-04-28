@@ -1,0 +1,84 @@
+:root {
+	--col-dark: #28231F;
+	--col-mid: #DCC59C;
+	--col-light: #FDECD8;
+	--col-highlight: #FFFFFF;
+}
+
+.lockscroll {
+	overflow: hidden;
+}
+
+html,
+body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	color: #333;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	background-color: var(--col-light);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* .fullpage{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	overflow: auto;
+}
+
+.fullpage.padded{
+	position: fixed;
+	top: 1em;
+	bottom: 1em;
+	left: 1em;
+	right: 1em;
+
+	overflow: auto;
+} */
+
+
+
+/* main {
+	max-width: 480px;
+	margin-left: auto;
+	margin-right: auto;
+} */
+
+
+
+
+@media screen and (min-width: 768px) {
+
+}
+@media screen and (min-width: 992px) {
+
+}
+@media screen and (min-width: 1280px) {
+
+}
+@media screen and (min-width: 1440px) {
+
+}
+@media screen and (min-width: 1920px) {
+
+}

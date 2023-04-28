@@ -1,0 +1,15 @@
+Nome bevanda,Descrizione,Formato,Costo,Formato alternativo,Costo formato alternativo,Categoria,engName,engDesc,engAltSize
+"Barolo docg Cascina Chicco",Uve: 100% Nebbiolo,750ml,10,,,Vino rosso,"Barolo docg Cascina Chicco",Grape variety: 100% Nebbiolo,
+Amarone Valpolicella docg Azienda Santi,"Uve: 70% Corvina, 20% Rondinella, 5% Oseleta, 5% Croatina",750ml,10,Calice,3,Vino rosso,Amarone Valpolicella docg Azienda Santi,"Grape variety: 70% Corvina, 20% Rondinella, 5% Oseleta, 5% Croatina",Glass
+Montepulciano d’Abruzzo Barone di Valforte,Uve: 100% Montepulciano d’Abruzzo,750ml,5,,,Vino rosso,Montepulciano d’Abruzzo Barone di Valforte,Grape variety: 100% Montepulciano d’Abruzzo,
+Gewurztraminer di Novacella,Uve: 100% Gewurztraminer,750ml,10,,,Vino bianco,Gewurztraminer di Novacella,Grape variety: 100% Gewurztraminer,
+"Chardonnay Falesia 13%vol Az.d’Amico",Uve: 100% Chardonnay,750ml,21,Calice,8,Vino bianco,"Chardonnay Falesia 13%vol Az.d’Amico",Grape variety: 100% Chardonnay,Glass
+"Capolemole Igt Bio Marco Carpineti",Uve: 100% Bellone,750ml,22,,,Vino bianco,"Capolemole Igt Bio Marco Carpineti",Grape variety: 100% Bellone,
+Itala Pilsen alla spina,"4,8 % Vol. Pils, biondo dorato, gusto ricco e distintivo",200ml,"3,5",,,Birra,Itala Pilsen on tap,"4.8% vol Blonde Pils, rich and distinctive taste",
+Grolsch,"5,1 % Vol. Weizern, giallo paglierino, gusto rinfrescante e fruttato",200ml,"3,5",,,Birra,Grolsch,"Wheat beer, pale yellow, refreshing and fruity taste",
+Acqua Naturale,Mangiatorella,1l,2,"0,5l",1,Analcolici,Natural Water,Mangiatorella,"0,5l"
+Acqua Effervescente,Ferrarelle,1l,2,"0,5l",1,Analcolici,Sparkling water,Ferrarelle,"0,5l"
+Coca Cola,in lattina,330ml,2,,,Analcolici,Coca Cola,in can,
+Coca Cola,alla spina,400ml,3,200ml,2,Analcolici,Coca Cola,on tap,200ml
+Espresso,,,1,,,Bar,Espresso,,
+Cappuccino,,,"1,5",,,Bar,Cappuccino,,
