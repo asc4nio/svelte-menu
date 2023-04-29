@@ -42,6 +42,12 @@ h6 {
 	margin-right: auto;
 }
 
+button{
+	text-decoration: none;
+	padding: 0;
+	color: inherit;
+}
+
 
 
 

@@ -1,50 +1,39 @@
 <script>
-
 	/**DATA******************************************************/
-	import {State, Store} from "../stores/Menu.js";
+	import { State, Store } from "../stores/Menu.js";
 	import UIDATA from "../stores/UiData.js";
 
 	/**COMPONENTS*************************************************/
 	import Header from "../components/Header.svelte";
-	
-	// import {push, pop, replace} from "svelte-spa-router"
+	import HomeLinks from "../components/HomeLinks.svelte";
 
-	import { fade, blur, fly, slide, scale, draw, crossfade  } from 'svelte/transition';
-
-	// const body = document.querySelector('body')
-	// $: $State.isFavOpen? body.classList.add("lockscroll") : body.classList.remove("lockscroll")
-
+	import {
+		fade,
+		blur,
+		fly,
+		slide,
+		scale,
+		draw,
+		crossfade,
+	} from "svelte/transition";
 </script>
 
-<div class="page" in:fly="{{delay:400, duration:400, x: '-50%'}}" out:fly="{{duration:400, x:'-50%'}}">
+<div
+	class="page"
+	in:fade={{ delay: 400, duration: 400 }}
+	out:fade={{ duration: 400 }}
+>
 	<main>
 		<Header />
-		<div class="home-links">
-			<a href="#/food/">
-				<button>
-					food
-				</button>
-			</a>
-			<a href="#/drink/">
-				<button>
-					drinks
-				</button>
-			</a>
-		</div>
+		<HomeLinks />
+		<p>
+			Footer lorem ipsum dolor sit amet
+		</p>
 	</main>
 </div>
 
-
 <style>
-	.home-links {
-		padding: 1em;
-	}
-	button{
-		width: 100%;
-		height: 8em;
-		margin-bottom: 1em;
-	}
-	main{
+	main {
 		padding-bottom: 7em;
 	}
 </style>

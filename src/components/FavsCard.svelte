@@ -63,6 +63,7 @@
         border-radius: 1rem;
 
         padding: 1em;
+        padding-right: 3em;
 
         filter: drop-shadow(0rem 0rem 1rem rgba(40, 35, 31, 0.2));
     }

@@ -3,15 +3,15 @@
     import { State, Store } from "../stores/Menu.js";
 
     import FavsCard from "./FavsCard.svelte";
-	import {
-		fade,
-		blur,
-		fly,
-		slide,
-		scale,
-		draw,
-		crossfade,
-	} from "svelte/transition";
+    import {
+        fade,
+        blur,
+        fly,
+        slide,
+        scale,
+        draw,
+        crossfade,
+    } from "svelte/transition";
 
     import { FoodData, DrinkData } from "../stores/ProductData.js";
 
@@ -24,52 +24,106 @@
 
     $: titleText = UIDATA.FAVSTITLE[$State.lang];
     $: clearButtonText = UIDATA.FAVSCLEARBUTTON[$State.lang];
+
+    const body = document.querySelector("body");
+    $: $State.isFavOpen
+        ? body.classList.add("lockscroll")
+        : body.classList.remove("lockscroll");
 </script>
 
-<main id="favs"  in:fade="{{delay:200, duration:200}}" out:fade="{{duration:200}}">
-    <div class="page">
-        <h1>{titleText}</h1>
-        {#if favsCount > 0}
-            <div id="favs-list">
+<main
+    id="favs"
+    in:fly={{ duration: 400, y: "12em" }}
+    out:fly={{ duration: 200, y: "12em" }}
+>
+    <div class="page is--fav">
+        <div class="favs-head">
+            <h1>{titleText}</h1>
+            <button
+                on:click={() => {
+                    $State.isFavOpen = false;
+                }}>X</button
+            >
+        </div>
+        <div id="favs-list">
+            {#if favsCount > 0}
                 {#each $Store.favs as id}
-                        {#each $FoodData as item}
-                            {#if item.id === id}
-                                <FavsCard {item} on:emptyFav />
-                            {/if}
-                        {/each}
-                        {#each $DrinkData as item}
-                            {#if item.id === id}
-                                <FavsCard {item} on:emptyFav />
-                            {/if}
-                        {/each}
+                    {#each $DrinkData as item}
+                        {#if item.id === id}
+                            <FavsCard {item} on:emptyFav />
+                        {/if}
+                    {/each}
+                    {#each $FoodData as item}
+                        {#if item.id === id}
+                            <FavsCard {item} on:emptyFav />
+                        {/if}
+                    {/each}
                 {/each}
-            </div>
-            <button on:click={clearFavs}>{clearButtonText}</button>
-        {:else}
-            <p>Clicca su un prodotto per aggiungerlo ai preferiti.</p>
-        {/if}
+
+                <button on:click={clearFavs}>{clearButtonText}</button>
+            {:else}
+                <p>Clicca su un prodotto per aggiungerlo ai preferiti.</p>
+            {/if}
+        </div>
     </div>
 </main>
 
 <style>
     #favs {
-        background-color: var(--col-mid);
         position: fixed;
+        top: 1em;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        width: 100%;
+        max-width: 540px;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        border-radius: 2em 2em 0 0;
+
+        background-color: var(--col-mid);
+
+        filter: drop-shadow(0rem 0rem 1rem rgba(40, 35, 31, 0.2));
+    }
+    .page.is--fav {
+        position: absolute;
         top: 0;
         bottom: 0;
-        left: 0;
-        right: 0;
 
-        overflow: auto;
-
-        padding: 1em;
-
-        padding-bottom: 7em;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
     }
-    h1 {
-        margin-bottom: 1em;
+    .favs-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 1em 2em;
+
+        border: 0.16rem;
+        border-color: var(--col-light);
+        border-style: solid;
+        border-top: none;
+        border-left: none;
+        border-right: none;
     }
     #favs-list {
-        padding: 1em;
+        padding: 1em 2em;
+        overflow: auto;
+
+        padding-bottom: 8em;
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+        font-size: 1.5rem;
     }
 </style>

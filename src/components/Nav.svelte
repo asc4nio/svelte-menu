@@ -7,6 +7,7 @@
     $: console.log("$location", $location);
 
     import Favs from "./Favs.svelte";
+    import NavRouteSwitch from "./NavRouteSwitch.svelte";
 
     const toggleFavs = () => {
         $State.isFavOpen = !$State.isFavOpen;
@@ -31,6 +32,11 @@
         }
         push("/");
     };
+
+    $: showNavRouteSwitch = false
+    const toggleNavRouteSwitch = () => {
+        showNavRouteSwitch = !showNavRouteSwitch
+    };
 </script>
 
 <nav>
@@ -43,6 +49,13 @@
             <button on:click={() => goToHome()}>
                 <img src="./img/icons/menu-on.svg" alt="" />
             </button>
+        {:else}
+            <button on:click={() => toggleNavRouteSwitch()}>
+                <img src="./img/icons/menu-on.svg" alt="" />
+                {#if showNavRouteSwitch}
+                    <NavRouteSwitch />
+                {/if}
+            </button>            
         {/if}
         <button on:click={() => toggleFavs()}>
             {#if favsCount > 0}
@@ -96,6 +109,11 @@
         border: none;
         padding: 0;
         margin: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     img {

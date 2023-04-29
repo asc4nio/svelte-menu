@@ -7,6 +7,30 @@ const SUBHEADER = {
 }
 const NAV = 'Menu';
 
+const PRODUCTGROUPS = [
+    {
+        ita: {
+            title: 'Cibo',
+            subtitle: 'Scopri i nostri deliziosi piatti'
+        },
+        eng: {
+            title: 'Food',
+            subtitle: 'Translate: Scopri i nostri deliziosi piatti'
+        }
+    },
+    {
+        ita: {
+            title: 'Bevande',
+            subtitle: 'Scopri i nostri deliziosi piatti'
+        },
+        eng: {
+            title: 'Drinks',
+            subtitle: 'Translate: Scopri i nostri deliziosi piatti'
+        }
+    }
+]
+
+
 const FOODGROUPS = {
     ita: ['Antipasti', 'Primi', 'Secondi', 'Dessert'],
     eng: ['Starters', 'First courses', 'Second Courses', 'Dessert']
@@ -30,6 +54,7 @@ const UIDATA = {
     HEADER,
     SUBHEADER,
     NAV,
+    PRODUCTGROUPS,
     FOODGROUPS,
     DRINKGROUPS,
     FAVSTITLE,

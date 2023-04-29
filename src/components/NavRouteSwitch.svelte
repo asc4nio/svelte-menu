@@ -8,10 +8,11 @@
     const dispatch = createEventDispatcher()
 
     const goToSwitch = () => {
-        if ($State.isFavOpen) {
-            $State.isFavOpen = false
-        }
-        dispatch('NavRouteSwitch');
+        console.log('wewe')
+        // if ($State.isFavOpen) {
+        //     $State.isFavOpen = false
+        // }
+        // dispatch('NavRouteSwitch');
         // push('/')
     };
 

@@ -37,7 +37,7 @@
 <div class="page" in:fade="{{duration:200, delay:200}}" out:fade="{{duration:200}}" >
 	<main>
 	<ProductHead img={'./img/drink-head.jpeg'}>
-		<h1 slot="head">drink {$State.lang}</h1>
+		<h1 slot="head">{UIDATA.PRODUCTGROUPS[1][$State.lang].title}</h1>
 		<div slot="sub">
 			Accompagna il tuo pasto con uno dei nostri deliziosi drink! Dalla nostra selezione di vini pregiati alle bevande analcoliche, c'è qualcosa per accontentare ogni palato.
 		</div>
