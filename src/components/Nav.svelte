@@ -1,5 +1,5 @@
 <script>
-    import { State } from "../stores/Menu.js";
+    import { State, Store } from "../stores/Menu.js";
     import UIDATA from "../stores/UiData.js";
 
     import { push, pop, replace } from "svelte-spa-router";
@@ -14,26 +14,47 @@
         $State.lang === UIDATA.LANGS[0]
             ? ($State.lang = UIDATA.LANGS[1])
             : ($State.lang = UIDATA.LANGS[0]);
-        console.log("toggleLang", $State.lang);
     };
 
-    const goHome = () => {
+    $: otherLang = $State.lang == UIDATA.LANGS[0]
+            ? (otherLang = UIDATA.LANGS[1])
+            : (otherLang = UIDATA.LANGS[0]);
+
+    $: favsCount = $Store.favs.length;
+
+    const goToHome = () => {
         if ($State.isFavOpen) {
             $State.isFavOpen = false
         }
         push('/')
     };
+
 </script>
 
 <nav>
-    <button on:click={() => toggleLang()}> Lang </button>
-    <!-- <a href="/"> -->
-        <button on:click={() => goHome()}> Home </button>
-    <!-- </a> -->
-    <button on:click={() => toggleFavs()}> Favs </button>
+    <div class="inner-nav">
+        <button on:click={() => toggleLang()}>
+            <img src="./img/icons/navlang.svg" alt=""/>
+             {otherLang} 
+        </button>
+        <button on:click={() => goToHome()}>
+            <img src="./img/icons/menu-on.svg" alt=""/>
+        </button>
+        <button on:click={() => toggleFavs()}>
+            {#if favsCount>0}
+                <img src="./img/icons/navfav-on.svg" alt=""/>
+                {favsCount}
+            {:else}
+                <img src="./img/icons/navfav-off.svg" alt=""/>
+            {/if}
+        </button>
+    </div>
 </nav>
 
-<Favs isOpen={$State.isFavOpen} on:emptyFav={toggleFavs} />
+{#if $State.isFavOpen}
+    <Favs on:emptyFav={toggleFavs} />
+{/if}
+
 
 <style>
     nav {
@@ -46,13 +67,35 @@
 
         border-radius: 1rem;
 
-        display: flex;
-        align-content: center;
-        justify-content: center;
-
         padding: 0.5rem 1rem;
         background-color: rgb(255, 255, 255);
 
         filter: drop-shadow(0rem 0rem 1rem rgba(40, 35, 31, 0.2));
+    }
+
+    .inner-nav{
+        max-width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    button{
+        position: relative;
+        background-color: transparent;
+        border: none;
+    }
+
+    img {
+        height: 2rem;
+    }
+
+    button{
+        width: 2rem;
     }
 </style>

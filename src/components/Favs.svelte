@@ -1,11 +1,18 @@
 <script>
-    // export let isOpen;
-
     import UIDATA from "../stores/UiData.js";
     import { State, Store } from "../stores/Menu.js";
 
     import FavsCard from "./FavsCard.svelte";
-
+	import {
+		fade,
+		blur,
+		fly,
+		slide,
+		scale,
+		draw,
+		crossfade,
+	} from "svelte/transition";
+    
     import { FoodData, DrinkData } from "../stores/ProductData.js";
 
     const clearFavs = (itemId) => {
@@ -15,35 +22,34 @@
 
     $: favsCount = $Store.favs.length;
 
-    $: titleText = UIDATA.FAVSTITLE[$State.lang]
-    $: clearButtonText = UIDATA.FAVSCLEARBUTTON[$State.lang]
-
+    $: titleText = UIDATA.FAVSTITLE[$State.lang];
+    $: clearButtonText = UIDATA.FAVSCLEARBUTTON[$State.lang];
 </script>
 
-{#if $State.isFavOpen}
-    <main id="favs">
+<main id="favs"  in:fade="{{delay:200, duration:200}}" out:fade="{{duration:200}}">
+    <div class="page">
         <h1>{titleText}</h1>
         {#if favsCount > 0}
             <div id="favs-list">
                 {#each $Store.favs as id}
-                    {#each $FoodData as item}
-                        {#if item.id === id}
-                            <FavsCard {item} on:emptyFav />
-                        {/if}
-                    {/each}
-                    {#each $DrinkData as item}
-                        {#if item.id === id}
-                            <FavsCard {item} on:emptyFav />
-                        {/if}
-                    {/each}
+                        {#each $FoodData as item}
+                            {#if item.id === id}
+                                <FavsCard {item} on:emptyFav />
+                            {/if}
+                        {/each}
+                        {#each $DrinkData as item}
+                            {#if item.id === id}
+                                <FavsCard {item} on:emptyFav />
+                            {/if}
+                        {/each}
                 {/each}
             </div>
             <button on:click={clearFavs}>{clearButtonText}</button>
         {:else}
             <p>Clicca su un prodotto per aggiungerlo ai preferiti.</p>
         {/if}
-    </main>
-{/if}
+    </div>
+</main>
 
 <style>
     #favs {

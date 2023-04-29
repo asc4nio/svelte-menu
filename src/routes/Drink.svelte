@@ -35,8 +35,8 @@
 	// $: $State.isFavOpen? body.classList.add("lockscroll") : body.classList.remove("lockscroll")
 </script>
 
-
-<main>
+<div class="page" in:fade="{{delay:200, duration:200}}" out:fade="{{duration:200}}">
+	<main>
 	<ProductHead img={'./img/drink-head.jpeg'}>
 		<h1 slot="head">drink {$State.lang}</h1>
 		<div slot="sub">
@@ -46,3 +46,4 @@
 	<ProductGroup groups={drinkGroups} groupName="drink" />
 	<Nav />
 </main>
+</div>

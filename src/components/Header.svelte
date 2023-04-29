@@ -62,4 +62,14 @@
         padding: 1rem 2rem;
     }
 
+    @media screen and (min-width: 541px) {
+        header{
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+        img{
+            border-radius: 0 0 2em 0;
+        }
+    }
+
 </style>

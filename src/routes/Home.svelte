@@ -19,22 +19,24 @@
 
 </script>
 
-<main>
-	<Header />
-	<div class="home-links">
-		<a href="#/food/">
-			<button>
-				food
-			</button>
-		</a>
-		<a href="#/drink/">
-			<button>
-				drinks
-			</button>
-		</a>
-	</div>
-	<Nav/>
-</main>
+<div class="page" in:fly="{{delay:400, duration:400, x: '-100%'}}" out:fly="{{duration:400, x:'-100%'}}">
+	<main>
+		<Header />
+		<div class="home-links">
+			<a href="#/food/">
+				<button>
+					food
+				</button>
+			</a>
+			<a href="#/drink/">
+				<button>
+					drinks
+				</button>
+			</a>
+		</div>
+		<Nav/>
+	</main>
+</div>
 
 
 <style>

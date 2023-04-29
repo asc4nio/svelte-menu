@@ -31,6 +31,8 @@
 
 </script>
 
+<div class="page" in:fly="{{delay:400, duration:400, x: '100%'}}" out:fly="{{duration:400, x:'100%'}}">
+
 <main>
 	<ProductHead img={'./img/food-head.jpeg'}>
 		<h1 slot="head">food {$State.lang}</h1>
@@ -42,3 +44,4 @@
 	<ProductGroup groups={foodGroups} groupName="food" />
 	<Nav />
 </main>
+</div>
