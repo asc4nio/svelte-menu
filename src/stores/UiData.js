@@ -2,8 +2,8 @@ const LANGS = ['ita', 'eng']
 
 const HEADER = 'Menu';
 const SUBHEADER = {
-    ita: 'Benvenuti nel nostro ristorante! Abbiamo creato un menu digitale per aiutarvi a navigare la nostra offerta di cibo e bevande. Sfogliate le pagine, scegliete i vostri piatti preferiti e preparatevi ad assaporare la nostra prelibata cucina. Buon appetito!',
-    eng: 'Welcome to our restaurant! We have created a digital menu to help you navigate our food and drink offerings. Browse through the pages, choose your favorite dishes, and get ready to taste our delicious cuisine. Enjoy your meal!'
+    ita: 'Benvenuti nel nostro ristorante! Abbiamo creato un menu digitale per aiutarvi a navigare la nostra offerta di cibo e bevande. Scegliete i vostri piatti preferiti e preparatevi ad assaporare la nostra prelibata cucina. Buon appetito!',
+    eng: 'Welcome to our restaurant! We have created a digital menu to help you navigate our food and drink offerings. Choose your favorite dishes, and get ready to taste our delicious cuisine. Enjoy your meal!'
 }
 const NAV = 'Menu';
 
@@ -15,21 +15,20 @@ const PRODUCTGROUPS = [
         },
         eng: {
             title: 'Food',
-            subtitle: 'Translate: Scopri i nostri deliziosi piatti'
+            subtitle: 'Discover our delicious dishes'
         }
     },
     {
         ita: {
             title: 'Bevande',
-            subtitle: 'Scopri i nostri deliziosi piatti'
+            subtitle: 'Accompagna il tuo pasto con una bevanda'
         },
         eng: {
             title: 'Drinks',
-            subtitle: 'Translate: Scopri i nostri deliziosi piatti'
+            subtitle: 'Accompany your meal with a beverage'
         }
     }
 ]
-
 
 const FOODGROUPS = {
     ita: ['Antipasti', 'Primi', 'Secondi', 'Dessert'],
@@ -40,14 +39,21 @@ const DRINKGROUPS = {
     eng: ['Red wine', 'White wine', 'Beers', 'Drinks']
 }
 
-const FAVSTITLE = {
-    ita: "Preferiti",
-    eng: "Favorites"
+const FAVS = {
+    title:{
+        ita: "Preferiti",
+        eng: "Favorites"
+    },
+    tip:{
+        ita: 'Clicca su un prodotto per aggiungerlo ai preferiti',
+        eng: 'Click on a product to add it to your favorites.'
+    },
+    clearbutton:{
+        ita: "Rimuovi tutti",
+        eng: "Clear favorites"
+    }
 }
-const FAVSCLEARBUTTON = {
-    ita: "Rimuovi tutti",
-    eng: "Clear favorites"
-}
+
 
 const UIDATA = {
     LANGS,
@@ -57,7 +63,6 @@ const UIDATA = {
     PRODUCTGROUPS,
     FOODGROUPS,
     DRINKGROUPS,
-    FAVSTITLE,
-    FAVSCLEARBUTTON
+    FAVS
 }
 export default UIDATA

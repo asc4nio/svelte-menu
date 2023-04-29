@@ -34,21 +34,38 @@
 	// $: $State.isFavOpen? body.classList.add("lockscroll") : body.classList.remove("lockscroll")
 </script>
 
-<div class="page" in:fade="{{duration:200, delay:200}}" out:fade="{{duration:200}}" >
+<div
+	class="page"
+	in:fade={{ duration: 200, delay: 200 }}
+	out:fade={{ duration: 200 }}
+>
 	<main>
-	<ProductHead img={'./img/drink-head.jpeg'}>
-		<h1 slot="head">{UIDATA.PRODUCTGROUPS[1][$State.lang].title}</h1>
-		<div slot="sub">
-			Accompagna il tuo pasto con uno dei nostri deliziosi drink! Dalla nostra selezione di vini pregiati alle bevande analcoliche, c'è qualcosa per accontentare ogni palato.
+		<ProductHead img={"./img/drink-head.jpeg"}>
+			<h1 slot="head">{UIDATA.PRODUCTGROUPS[1][$State.lang].title}</h1>
+			<div slot="sub">
+				Accompagna il tuo pasto con uno dei nostri deliziosi drink!
+				Dalla nostra selezione di vini pregiati alle bevande
+				analcoliche, c'è qualcosa per accontentare ogni palato.
+			</div>
+		</ProductHead>
+		<ProductGroup groups={drinkGroups} groupName="drink" />
+
+		<div class="product-link">
+			<a href="#/food/">
+				<button> 
+					{UIDATA.PRODUCTGROUPS[0][$State.lang].subtitle}
+					food 
+				</button>
+			</a>
 		</div>
-	</ProductHead>
-	<ProductGroup groups={drinkGroups} groupName="drink" />
-</main>
+	</main>
 </div>
 
-
 <style>
-	main{
+	main {
 		padding-bottom: 7em;
+	}
+	.product-link{
+		padding: 2em;
 	}
 </style>

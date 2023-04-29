@@ -17,7 +17,7 @@
 
 
     <div class="sub-header">
-        <p class="p-big">
+        <p>
             {subtitle}
         </p>
     </div>

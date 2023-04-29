@@ -41,6 +41,15 @@
 	</ProductHead>
 
 	<ProductGroup groups={foodGroups} groupName="food" />
+
+	<div class="product-link">
+		<a href="#/drink/">
+			<button>
+				{UIDATA.PRODUCTGROUPS[1][$State.lang].subtitle}
+				drinks
+			</button>
+		</a>
+	</div>
 </main>
 </div>
 
@@ -49,5 +58,8 @@
 <style>
 	main{
 		padding-bottom: 7em;
+	}
+	.product-link{
+		padding: 2em;
 	}
 </style>

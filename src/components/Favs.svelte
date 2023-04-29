@@ -38,7 +38,8 @@
 >
     <div class="page is--fav">
         <div class="favs-head">
-            <h1>{titleText}</h1>
+            <!-- <h1>{titleText}</h1> -->
+            <h1>{UIDATA.FAVS.title[$State.lang]}</h1>
             <button
                 on:click={() => {
                     $State.isFavOpen = false;
@@ -60,9 +61,9 @@
                     {/each}
                 {/each}
 
-                <button on:click={clearFavs}>{clearButtonText}</button>
+                <button on:click={clearFavs}>{UIDATA.FAVS.clearbutton[$State.lang]}</button>
             {:else}
-                <p>Clicca su un prodotto per aggiungerlo ai preferiti.</p>
+                <p>{UIDATA.FAVS.tip[$State.lang]}</p>
             {/if}
         </div>
     </div>
