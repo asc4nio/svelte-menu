@@ -10,6 +10,7 @@
     $: dialog && showModal
         ? body.classList.add("lockscroll")
         : body.classList.remove("lockscroll");
+
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -81,11 +82,13 @@
         height: 2rem;
         margin-right: 1em;
     }
+
+
     dialog {
-        margin-left: 1em;
-        margin-right: 1em;
-        width: auto;
-        max-width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: calc(540px - 2em);
 
         border-radius: 1em;
         border: none;
@@ -93,6 +96,7 @@
     }
     dialog::backdrop {
         background: rgba(0, 0, 0, 0.3);
+        padding: 1em;
     }
     dialog > div {
         padding: 1em;

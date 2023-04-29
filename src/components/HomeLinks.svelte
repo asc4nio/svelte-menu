@@ -51,6 +51,12 @@
         text-decoration: none;
 
         filter: drop-shadow(0rem 0rem 1rem rgba(40, 35, 31, 0.2));
+
+        transition: transform 0.2s;
+    }
+
+    button:active{
+        transform: scale(0.95);
     }
 
     .button-image-cont {

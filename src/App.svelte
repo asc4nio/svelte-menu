@@ -11,6 +11,7 @@
     // import NotFound from './routes/NotFound.svelte';
 
 	import Nav from "./components/Nav.svelte";
+    import { State } from './stores/Menu';
 
 
 
@@ -22,8 +23,16 @@
 		// '*' : NotFound
 	}
 
+	$: innerWidth = 0
+	$: innerHeight = 0
+	$: $State.appWidth = innerWidth
+	$: $State.appHeight = innerHeight
+
+	$: console.log($State.appWidth,$State.appHeight )
+
 </script>
 
+<svelte:window bind:innerWidth bind:innerHeight />
 <main>
 	<Router {routes} />
 	<Nav/>

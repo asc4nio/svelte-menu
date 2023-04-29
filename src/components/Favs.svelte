@@ -57,7 +57,9 @@
                     {/each}
                 {/each}
 
-                <button on:click={clearFavs}>{UIDATA.FAVS.clearbutton[$State.lang]}</button>
+                <button on:click={clearFavs}
+                    >{UIDATA.FAVS.clearbutton[$State.lang]}</button
+                >
             {:else}
                 <p>{UIDATA.FAVS.tip[$State.lang]}</p>
             {/if}
@@ -70,11 +72,13 @@
         position: fixed;
         top: 1em;
         bottom: 0;
+        /* left: auto;
+        right: auto; */
         left: 50%;
         transform: translate(-50%, 0);
 
         width: 100%;
-        max-width: 540px;
+        max-width: calc(540px - 2em);
         height: 100%;
 
         display: flex;
@@ -88,6 +92,11 @@
 
         filter: drop-shadow(0rem 0rem 1rem rgba(40, 35, 31, 0.2));
     }
+
+    #favs::backdrop {
+        background: rgba(255, 0, 0, 0.25);
+    }
+    
     .page.is--fav {
         position: absolute;
         top: 0;

@@ -22,32 +22,7 @@
     {/if}
 </div>
 
-<Modal {item} bind:showModal >
-    <!-- <div slot="header">
-    <h3>
-        {item.name}
-    </h3>
-
-    </div>
-
-    {#if item.isFrozen}
-        <img src="./img/icons/icon-item-frozen.svg" alt="" />
-        <p>Contiene ingredienti surgelati</p>
-    {/if}
-    {#if item.isGlutenfree}
-        <img src="./img/icons/icon-item-glutenfree.svg" alt="" />
-        <p>Prodotto senza glutine</p>
-    {/if}
-    {#if item.isMilkfree}
-        <img src="./img/icons/icon-item-milkfree.svg" alt="" />
-        <p>Prodotto senza lattosio</p>
-    {/if}
-    {#if item.isVegetarian}
-        <img src="./img/icons/icon-item-vegetarian.svg" alt="" />
-        <p>Prodotto vegetariano</p>
-    {/if} -->
-</Modal>
-
+<Modal {item} bind:showModal />
 <style>
     /* .icons{} */
 </style>
