@@ -12,7 +12,7 @@
 		draw,
 		crossfade,
 	} from "svelte/transition";
-    
+
     import { FoodData, DrinkData } from "../stores/ProductData.js";
 
     const clearFavs = (itemId) => {
@@ -63,6 +63,8 @@
         overflow: auto;
 
         padding: 1em;
+
+        padding-bottom: 7em;
     }
     h1 {
         margin-bottom: 1em;

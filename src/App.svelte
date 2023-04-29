@@ -10,6 +10,9 @@
     import Drink from './routes/Drink.svelte';
     // import NotFound from './routes/NotFound.svelte';
 
+	import Nav from "./components/Nav.svelte";
+
+
 
 	let routes = {
 		'/' : Home,
@@ -23,6 +26,7 @@
 
 <main>
 	<Router {routes} />
+	<Nav/>
 </main>
 
 <style>

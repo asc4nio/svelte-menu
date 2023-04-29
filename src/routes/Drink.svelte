@@ -3,7 +3,6 @@
 	import UIDATA from "../stores/UiData.js";
 	import { DrinkData } from "../stores/ProductData.js";
 
-	import Nav from "../components/Nav.svelte";
 	import ProductGroup from "../components/ProductGroup.svelte";
 	import ProductHead from "../components/ProductHead.svelte";
 
@@ -35,7 +34,7 @@
 	// $: $State.isFavOpen? body.classList.add("lockscroll") : body.classList.remove("lockscroll")
 </script>
 
-<div class="page" in:fade="{{delay:200, duration:200}}" out:fade="{{duration:200}}">
+<div class="page" in:fade="{{duration:200, delay:200}}" out:fade="{{duration:200}}" >
 	<main>
 	<ProductHead img={'./img/drink-head.jpeg'}>
 		<h1 slot="head">drink {$State.lang}</h1>
@@ -44,6 +43,12 @@
 		</div>
 	</ProductHead>
 	<ProductGroup groups={drinkGroups} groupName="drink" />
-	<Nav />
 </main>
 </div>
+
+
+<style>
+	main{
+		padding-bottom: 7em;
+	}
+</style>

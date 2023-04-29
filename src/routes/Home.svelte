@@ -4,11 +4,8 @@
 	import {State, Store} from "../stores/Menu.js";
 	import UIDATA from "../stores/UiData.js";
 
-	// import FavsStore from "../stores/FavsStore.js";
-
 	/**COMPONENTS*************************************************/
 	import Header from "../components/Header.svelte";
-	import Nav from "../components/Nav.svelte";
 	
 	// import {push, pop, replace} from "svelte-spa-router"
 
@@ -19,7 +16,7 @@
 
 </script>
 
-<div class="page" in:fly="{{delay:400, duration:400, x: '-100%'}}" out:fly="{{duration:400, x:'-100%'}}">
+<div class="page" in:fly="{{delay:400, duration:400, x: '-50%'}}" out:fly="{{duration:400, x:'-50%'}}">
 	<main>
 		<Header />
 		<div class="home-links">
@@ -34,7 +31,6 @@
 				</button>
 			</a>
 		</div>
-		<Nav/>
 	</main>
 </div>
 
@@ -47,5 +43,8 @@
 		width: 100%;
 		height: 8em;
 		margin-bottom: 1em;
+	}
+	main{
+		padding-bottom: 7em;
 	}
 </style>

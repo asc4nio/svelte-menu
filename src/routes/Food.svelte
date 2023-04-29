@@ -3,7 +3,6 @@
 	import UIDATA from "../stores/UiData.js";
 	import { FoodData } from "../stores/ProductData.js";
 
-	import Nav from "../components/Nav.svelte";
 	import ProductGroup from "../components/ProductGroup.svelte";
 	import ProductHead from "../components/ProductHead.svelte";
 
@@ -31,7 +30,7 @@
 
 </script>
 
-<div class="page" in:fly="{{delay:400, duration:400, x: '100%'}}" out:fly="{{duration:400, x:'100%'}}">
+<div class="page" in:fade="{{duration:200, delay:200}}" out:fade="{{duration:200}}" >
 
 <main>
 	<ProductHead img={'./img/food-head.jpeg'}>
@@ -42,6 +41,13 @@
 	</ProductHead>
 
 	<ProductGroup groups={foodGroups} groupName="food" />
-	<Nav />
 </main>
 </div>
+
+
+
+<style>
+	main{
+		padding-bottom: 7em;
+	}
+</style>
