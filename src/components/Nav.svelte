@@ -43,7 +43,9 @@
     <div class="inner-nav">
         <button on:click={() => toggleLang()}>
             <img src="./img/icons/navlang.svg" alt="" />
-            {otherLang}
+            <div class="button-tip">
+                {otherLang}
+            </div>
         </button>
         {#if $location !== "/"}
             <button on:click={() => goToHome()}>
@@ -60,7 +62,9 @@
         <button on:click={() => toggleFavs()}>
             {#if favsCount > 0}
                 <img src="./img/icons/navfav-on.svg" alt="" />
-                {favsCount}
+                <div class="button-tip">
+                    {favsCount}
+                </div>
             {:else}
                 <img src="./img/icons/navfav-off.svg" alt="" />
             {/if}
@@ -114,6 +118,16 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+    .button-tip{
+        position: absolute;
+        bottom:100%;
+        padding: 0.5em;
+        min-width: 1rem;
+        background-color: aqua;
+        border-radius: 1em;
+
+        pointer-events: none;
     }
 
     img {

@@ -22,9 +22,6 @@
 
     $: favsCount = $Store.favs.length;
 
-    $: titleText = UIDATA.FAVSTITLE[$State.lang];
-    $: clearButtonText = UIDATA.FAVSCLEARBUTTON[$State.lang];
-
     const body = document.querySelector("body");
     $: $State.isFavOpen
         ? body.classList.add("lockscroll")
@@ -38,7 +35,6 @@
 >
     <div class="page is--fav">
         <div class="favs-head">
-            <!-- <h1>{titleText}</h1> -->
             <h1>{UIDATA.FAVS.title[$State.lang]}</h1>
             <button
                 on:click={() => {
