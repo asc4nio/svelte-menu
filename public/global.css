@@ -88,7 +88,7 @@ p {
   font-weight: 400;
 }
 .p-big {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 a {
@@ -109,17 +109,22 @@ button {
   max-width: 540px;
   margin-left: auto;
   margin-right: auto;
+
+  /* padding-bottom: 7em; */
 }
 
 section {
   padding: 1em;
-  padding-bottom: 7em;
 }
 
 button {
   text-decoration: none;
   padding: 0;
   color: inherit;
+}
+
+.dropshadow {
+  filter: drop-shadow(0rem 0rem 1rem rgba(40, 35, 31, 0.2));
 }
 
 @media screen and (min-width: 768px) {

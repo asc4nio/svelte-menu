@@ -19,7 +19,7 @@
     padding: 1em;
     padding-top: 0;
 
-    margin-bottom: 2em;
+    margin-bottom: 1em;
   }
   .image-container {
     position: relative;

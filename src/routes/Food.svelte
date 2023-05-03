@@ -38,9 +38,14 @@
   <ProductHead img={"./img/food-head.jpeg"}>
     <h1 slot="head">{UIDATA.PRODUCTGROUPS[0][$State.lang].title}</h1>
     <div slot="sub">
-      Scopri i nostri deliziosi piatti creati con ingredienti freschi e di alta
-      qualità, dalla ricca selezione di antipasti ai piatti principali di carne
-      e pesce.
+      <p class="p-big">
+        Scopri i nostri deliziosi piatti creati con ingredienti freschi e di
+        alta qualità.
+      </p>
+      <p>
+        Dalla ricca selezione di antipasti ai piatti principali di carne e
+        pesce.
+      </p>
     </div>
   </ProductHead>
 
@@ -49,7 +54,7 @@
 </div>
 
 <style>
-  /* main {
-    padding-bottom: 7em;
-  } */
+  .page {
+    padding-bottom: 6em;
+  }
 </style>

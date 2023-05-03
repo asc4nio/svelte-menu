@@ -42,6 +42,6 @@
 
 <style>
   .products-group {
-    margin-bottom: 4em;
+    margin-bottom: 3em;
   }
 </style>

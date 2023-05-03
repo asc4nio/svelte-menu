@@ -43,9 +43,13 @@
   <ProductHead img={"./img/drink-head.jpeg"}>
     <h1 slot="head">{UIDATA.PRODUCTGROUPS[1][$State.lang].title}</h1>
     <div slot="sub">
-      Accompagna il tuo pasto con uno dei nostri deliziosi drink! Dalla nostra
-      selezione di vini pregiati alle bevande analcoliche, c'è qualcosa per
-      accontentare ogni palato.
+      <p class="p-big">
+        Accompagna il tuo pasto con uno dei nostri deliziosi drink!
+      </p>
+      <p>
+        Dalla nostra selezione di vini pregiati alle bevande analcoliche, c'è
+        qualcosa per accontentare ogni palato.
+      </p>
     </div>
   </ProductHead>
 
@@ -55,7 +59,7 @@
 </div>
 
 <style>
-  /* main {
-    padding-bottom: 7em;
-  } */
+  .page {
+    padding-bottom: 6em;
+  }
 </style>

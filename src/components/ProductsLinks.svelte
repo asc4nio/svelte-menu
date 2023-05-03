@@ -80,7 +80,7 @@
     transition: transform 0.2s;
   }
   button.is--smallimage {
-    padding: 0em;
+    padding: 1em;
     background-color: transparent;
     border-radius: 2em;
   }

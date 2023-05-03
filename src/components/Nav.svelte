@@ -39,9 +39,12 @@
   };
 
   let homeBtnClass;
-  $: $location === "/" ? (homeBtnClass = "is--disabled") : (homeBtnClass = "");
+  $: $location === "/" && !$State.isFavOpen
+    ? (homeBtnClass = "is--disabled")
+    : (homeBtnClass = "");
 
-  // let favsBtnClass
+  let favsBtnClass;
+  $: $State.isFavOpen ? (favsBtnClass = "is--active") : (favsBtnClass = "");
 </script>
 
 <nav>
@@ -65,8 +68,8 @@
                 {/if}
             </button>            
         {/if} -->
-    <button on:click={() => toggleFavs()}>
-      {#if favsCount > 0}
+    <button class={favsBtnClass} on:click={() => toggleFavs()}>
+      {#if favsCount > 0 || $State.isFavOpen}
         <img src="./img/icons/navfav-on.svg" alt="" />
         <div class="button-tip">
           {favsCount}
@@ -124,9 +127,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    transition: all 0.2s;
+  }
+  button.is--active {
+    transform: scale(1.33);
   }
   button.is--disabled {
-    transform: scale(0.75);
+    transform: scale(0.8);
     opacity: 0.5;
   }
   .button-tip {
@@ -147,6 +155,7 @@
     border-radius: 1em;
 
     font-family: Arial, Helvetica, sans-serif;
+    /* font-weight: bold; */
     letter-spacing: 0.05em;
     font-size: 0.8em;
     text-transform: uppercase;

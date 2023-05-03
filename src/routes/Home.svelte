@@ -6,6 +6,7 @@
   /**COMPONENTS*************************************************/
   import Header from "../components/Header.svelte";
   import ProductsLinks from "../components/ProductsLinks.svelte";
+  import Contacts from "../components/Contacts.svelte";
 
   import {
     fade,
@@ -26,12 +27,24 @@
   <Header />
   <section>
     <ProductsLinks foodLink={true} drinkLink={true} />
-    <p>Footer lorem ipsum dolor sit amet</p>
+    <div class="infobox">
+      <p>
+        Informazioni sul servizio come orari e costo coperto. <br />
+        Lorem ipsum dolor sit amet consectetur. Elementum laoreet commodo blandit
+        magna sit.
+      </p>
+    </div>
+    <Contacts />
   </section>
 </div>
 
 <style>
-  /* main {
-    padding-bottom: 7em;
-  } */
+  .infobox {
+    padding: 1em;
+    margin-bottom: 2em;
+  }
+  section {
+    /* padding-bottom: 6em; */
+    padding-bottom: 0;
+  }
 </style>
