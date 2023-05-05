@@ -113,7 +113,8 @@
     align-items: flex-start;
     justify-content: flex-start;
 
-    padding: 2em;
+    padding: 2em 1.5em;
+    /* padding-right: 1em; */
   }
   h2 {
     text-decoration: none;

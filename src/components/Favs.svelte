@@ -12,6 +12,7 @@
     draw,
     crossfade,
   } from "svelte/transition";
+  import { flip } from "svelte/animate";
 
   import { FoodData, DrinkData } from "../stores/ProductData.js";
 
@@ -39,37 +40,50 @@
       <button
         on:click={() => {
           $State.isFavOpen = false;
-        }}>X</button
+        }}
       >
+        <img class="close-icon" src="./img/icons/close.svg" alt="" />
+      </button>
     </div>
+
+    <!-- {#key favsCount} -->
     <div id="favs-list">
       {#if favsCount > 0}
-        {#each $Store.favs as id}
-          {#each $DrinkData as item}
-            {#if item.id === id}
-              <FavsCard {item} on:emptyFav />
-            {/if}
-          {/each}
-          {#each $FoodData as item}
-            {#if item.id === id}
-              <FavsCard {item} on:emptyFav />
-            {/if}
-          {/each}
+        <div class="clear-container">
+          <button on:click={clearFavs}
+            >{UIDATA.FAVS.clearbutton[$State.lang]}</button
+          >
+        </div>
+        {#each $Store.favs as id (id)}
+          <div animate:flip={{ duration: 500 }}>
+            {#each $DrinkData as item}
+              {#if item.id === id}
+                <FavsCard {item} on:emptyFav />
+              {/if}
+            {/each}
+            {#each $FoodData as item}
+              {#if item.id === id}
+                <FavsCard {item} on:emptyFav />
+              {/if}
+            {/each}
+          </div>
         {/each}
-
-        <button on:click={clearFavs}
-          >{UIDATA.FAVS.clearbutton[$State.lang]}</button
-        >
+        <!-- <button on:click={clearFavs}>{UIDATA.FAVS.clearbutton[$State.lang]}</button> -->
       {:else}
         <div class="favs-dummy dropshadow">
           <p class="p-big">{UIDATA.FAVS.tip[$State.lang]}</p>
         </div>
       {/if}
     </div>
+    <!-- {/key} -->
   </div>
 </div>
 
 <style>
+  .close-icon {
+    width: 1.25em;
+    height: 1.25em;
+  }
   #favs {
     position: fixed;
     top: 1em;
@@ -129,10 +143,17 @@
     padding-bottom: 8em;
   }
 
+  .clear-container {
+    text-align: right;
+    margin-bottom: 1em;
+  }
+
   button {
     background-color: transparent;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+
+    /* text-decoration: underline; */
   }
 
   .favs-dummy {

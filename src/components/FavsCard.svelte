@@ -4,6 +4,17 @@
   import UIDATA from "../stores/UiData.js";
   import { State, Store } from "../stores/Menu.js";
 
+  // import {
+  //   fade,
+  //   blur,
+  //   fly,
+  //   slide,
+  //   scale,
+  //   draw,
+  //   crossfade,
+  // } from "svelte/transition";
+  // import { flip } from "svelte/animation";
+
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 

@@ -13,10 +13,18 @@
     $State.isFavOpen = !$State.isFavOpen;
   };
 
+  $: showTipClass = "is--hidden";
+
   const toggleLang = () => {
     $State.lang === UIDATA.LANGS[0]
       ? ($State.lang = UIDATA.LANGS[1])
       : ($State.lang = UIDATA.LANGS[0]);
+
+    showTipClass = "";
+
+    setTimeout(() => {
+      showTipClass = "is--hidden";
+    }, 800);
   };
 
   $: otherLang =
@@ -51,7 +59,8 @@
   <div class="inner-nav">
     <button on:click={() => toggleLang()}>
       <img src="./img/icons/navlang.svg" alt="" />
-      <div class="button-tip lang">
+
+      <div class="button-tip lang {showTipClass}">
         {otherLang}
       </div>
     </button>
@@ -71,6 +80,7 @@
     <button class={favsBtnClass} on:click={() => toggleFavs()}>
       {#if favsCount > 0 || $State.isFavOpen}
         <img src="./img/icons/navfav-on.svg" alt="" />
+
         <div class="button-tip">
           {favsCount}
         </div>
@@ -137,6 +147,12 @@
     transform: scale(0.8);
     opacity: 0.5;
   }
+
+  .button-tip.lang.is--hidden {
+    /* display: hidden; */
+    opacity: 0;
+  }
+
   .button-tip {
     position: absolute;
     bottom: 100%;
